@@ -7,13 +7,22 @@ import { useState } from 'react'
 import SideBarData from './SideBarData'
 import SubMenu from './Submenu'
 import { useEffect, useRef } from "react";
+import FCALogo from "../FCALogo.png";
+import Image from 'react-bootstrap/Image'
+const imagesList = [
+  {
+    id: 1,
+    src: FCALogo,
+    alt: "Image 1" ,
+  },
+]
 
 const Nav = styled.div`
-background: #15171;
+background: #FFFFFF;
 height: 60px;
 display: flex;
-justify-content: flex-start;
-align-items: flex;
+border-bottom: 1px solid #ececed;
+
 `; 
 
 const NavIcon = styled(Link)`
@@ -31,6 +40,8 @@ margin-left: 1rem;
 height: 80px;
 font-size: 1;
 text-align: center;
+justify-content: center
+
 
 `;
 
@@ -39,7 +50,7 @@ background: #31435c;
 width: 250px;
 height: 800px;
 display: flex;
-justify-content: center;
+justify-content: flex-end;
 position: fixed;
 top: 0;
 left: ${({sidebar}) => (sidebar ? '0': '-100%')};
@@ -62,15 +73,21 @@ const Sidebar = () => {
   return(
 
     <>
-   
+  
   <Nav>
-    
+
+               
    <NavIcon to='#'>
     <FaIcons.FaBars onClick={showSidebar} />
    </NavIcon>
   
+   {imagesList.map((image) => (
+        <img key={image.id} src={image.src} alt={image.alt} style={{height:60, width:150}} />
+      ))}
+
+       <text>Recruitment Dashboard</text>
   </Nav>  
-  <text>Recruitment Dashboard</text>
+ 
   <SidebarNav sidebar = {sidebar}>
  
   <SidebarWrap>
@@ -83,6 +100,9 @@ const Sidebar = () => {
   </SidebarWrap>
   </SidebarNav>
 
+
+    
+  
 </>
 
 );

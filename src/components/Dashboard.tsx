@@ -4,11 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import "../App.css";
 
 
-
 export const getDashboardAPI = async () => {
   try {
     const BASE_URL = 'http://localhost:5100/api';
-    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjU5Njg3YWJlOGM5YjQ5YWQ4MjhmNWM5IiwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhZGZjYS5nb3YuYWUifSwiaWF0IjoxNzE0NjM5NjEyLCJleHAiOjE3MTQ2NzU2MTJ9.57gYIrPIv3b6DBTlFl5A8aW724ikdI59_LGszpUX3WE';
+    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjU5Njg3YWJlOGM5YjQ5YWQ4MjhmNWM5IiwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhZGZjYS5nb3YuYWUifSwiaWF0IjoxNzE0OTczOTUxLCJleHAiOjE3MTUwMDk5NTF9.XYNaWn9TsKjP64tKjb-IR97QE875Zhsga2gxNO_qh-U';
     const requestOptions = {
       method: 'GET',
       headers: { 'Content-Type': 'application/json', 'x-auth-token': `${token}` },

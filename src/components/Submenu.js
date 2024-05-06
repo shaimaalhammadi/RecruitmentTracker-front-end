@@ -13,6 +13,11 @@ height: 60px;
 text-decoration:none;
 font-size:13px;
 
+&:hover{
+    background: #252831;
+    cursor: pointer;
+}
+
 `;
 
 const SidebarLabel = styled.span`
